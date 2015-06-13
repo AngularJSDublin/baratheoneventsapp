@@ -1,7 +1,7 @@
 'use strict';
 
 (function(){
-	var app = angular.module('eventsApp', []);
+	var app = angular.module('eventsApp', ['ui.router']);
 
 	//controller as syntax
 	app.controller('SampleController', function(){
