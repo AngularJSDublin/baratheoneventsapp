@@ -1,6 +1,3 @@
 'use strict';
 
-(function(){
-	var app = angular.module('eventsApp', ['ui.router']);
-
-})();
+angular.module('eventsApp', ['ui.router']);
