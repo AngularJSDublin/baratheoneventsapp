@@ -1,4 +1,4 @@
-angular.module("eventsApp")
+angular.module("events.routes", [])
 
 	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		

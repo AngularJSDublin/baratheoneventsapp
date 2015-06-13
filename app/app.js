@@ -1,3 +1,8 @@
 'use strict';
 
-angular.module('eventsApp', ['ui.router']);
+angular.module('eventsApp', [
+
+'ui.router',
+'events.routes'
+
+]);
