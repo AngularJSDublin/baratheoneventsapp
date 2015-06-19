@@ -1,13 +1,12 @@
 angular.module("events.routes", [])
 
-	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 		
 		$urlRouterProvider.otherwise('/');
 		
 		$stateProvider.state('home', {
 			url: '/',
-			templateUrl: 'views/home.html',
-			controller: 'HomeController'
+			templateUrl: 'app/views/home.html'
 		})
 		.state('home.detail', {
 			url: '/',

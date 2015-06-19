@@ -19,8 +19,11 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     </head>
-    <body ng-app='eventsApp'>
+    <body ng-app='eventsApp' class="container">
+
+    <h1>Hello</h1>
   
+	<div ui-view></div>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         
@@ -32,11 +35,11 @@
 
         <script src="assets/js/vendor/bootstrap.min.js"></script>
 
-        <script src="assets/js/vendor/angular.min.js"></script>
+       <!-- <script src="assets/js/vendor/angular.min.js"></script> -->
 
         <script src="app/app.js"></script>
         <script src="app/routes/routes.js"></script>
-       <!-- <script src="app/controllers/HomeController.js"></script> -->
+        <script src="app/controllers/homeController.js"></script>
 
         <script src="app/services/index.js"></script>
         <script src="app/services/EventsService.js"></script>
