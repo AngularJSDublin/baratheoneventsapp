@@ -1,1 +1,43 @@
-<h2>hello a second time</h2>
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="Home.toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+            <md-icon aria-label="Menu" md-svg-icon="assets/material-icons/ic_menu_white_24px.svg"></md-icon>
+        </md-button>
+        <h1>Baratheon Events</h1>
+    </div>
+</md-toolbar>
+
+<!--'md-sidenav' resized to 250px in 'angular-material.css' but under gitignore-->
+<div layout="row" flex>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+        <p>'ello 'ello</p>
+    </md-sidenav>
+
+    <!--Material uses Flexbox exclusively-->
+    <div id="content" flex>
+        <md-content id="container" flex class="md-padding">
+            <md-list flex layout-wrap layout="row" layout-sm="column" layout-align="space-around center">
+                <md-list-item flex="50" flex-md="75" flex-sm="100" class="md-2-line" ng-repeat="item in mydata.events">
+                    <md-card>
+                        <!--<img src="" class="md-card-image" alt="image caption">-->
+                        <md-card-content>
+                            <div style="display: inline-block;">
+                                <h4>{{item.date}}</h4>
+                            </div>
+                            <div>
+                                <h4>{{item.name}}</h4>
+                            </div>
+                            <p>{{item.description | limitTo: 150}}...</p>
+                        </md-card-content>
+                        <md-card-footer>
+                            <div class="md-actions" layout="row" layout-align="end center">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </div>
+                        </md-card-footer>
+                    </md-card>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+</div>

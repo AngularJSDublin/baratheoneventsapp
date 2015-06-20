@@ -6,7 +6,8 @@ angular.module("events.routes", [])
 		
 		$stateProvider.state('home', {
 			url: '/',
-			templateUrl: 'app/views/home.html'
+			templateUrl: 'app/views/home.html',
+			controller: 'HomeCtrl as Home'
 		})
 		.state('home.detail', {
 			url: '/',
