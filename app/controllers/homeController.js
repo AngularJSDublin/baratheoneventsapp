@@ -3,7 +3,7 @@
 
     angular.module('eventsApp')
 
-        .controller('HomeCtrl', [ '$scope', '$mdSidenav', '$firebaseObject',
+        .controller('homeController', [ '$scope', '$mdSidenav', '$firebaseObject',
 
             //'Controller as' syntax not used - necessary/how to integrate with Material?
 
