@@ -16,20 +16,20 @@ angular.module('eventsApp', [
             templateUrl: 'app/views/home.html',
             controller: 'homeController as Home'
         })
-            .state('home.events', {
+            .state('events', {
                 url: '/events',
                 templateUrl: 'views/home.events.html',
-                controller: 'EventsController'
+                // controller: 'EventsController'
             })
-            .state('home.events.detail', {
-                url: '/:id',
-                templateUrl: 'views/home.detail.html',
-                controller: 'DetailController'
-            })
-            .state('home.other', {
-                url: '/other',
-                templateUrl: 'views/home.other.html',
-                controller: 'OtherController'
-            });
+            // .state('home.events.detail', {
+            //     url: '/:id',
+            //     templateUrl: 'views/home.detail.html',
+            //     controller: 'DetailController'
+            // })
+            // .state('home.other', {
+            //     url: '/other',
+            //     templateUrl: 'views/home.other.html',
+            //     controller: 'OtherController'
+            // });
 
     }]);
