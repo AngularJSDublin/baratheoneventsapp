@@ -1,23 +1,18 @@
-(function(){
+(function() {
 
 
     angular.module('eventsApp')
 
-        .controller('homeController', [ '$scope', '$mdSidenav', '$firebaseObject',
+    .controller('homeController', ['$scope', '$mdSidenav',
 
-            //'Controller as' syntax not used - necessary/how to integrate with Material?
+        //'Controller as' syntax not used - necessary/how to integrate with Material?
 
-            function($scope, $mdSidenav, $firebaseObject) {
-                var Home = this;
-                Home.toggleSidenav = function (menuId) {
-                    $mdSidenav(menuId).toggle();
-                };
+        function($scope, $mdSidenav) {
+            var Home = this;
+            Home.toggleSidenav = function(menuId) {
+                $mdSidenav(menuId).toggle();
+            };
 
-                var myDataRef = new Firebase('https://baratheoneventsdb.firebaseio.com/');
-                // download the data into a local object
-                $scope.mydata = $firebaseObject(myDataRef);
-
-
-            }
-        ])
+        }
+    ])
 })();
