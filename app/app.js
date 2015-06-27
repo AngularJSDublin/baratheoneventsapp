@@ -5,11 +5,11 @@ angular.module('eventsApp', [
     'firebase',
     'ngAnimate',
     'ngAria',
-    'ngMaterial'
+    'ngMaterial',
+    'eventsApp.services'
 ])
 
 .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('home', {
@@ -17,5 +17,9 @@ angular.module('eventsApp', [
         templateUrl: 'app/views/events.html',
         controller: 'eventsController'
     })
-
+    .state('login', {
+        url: '/login',
+        templateUrl: 'app/views/login.html',
+        controller: 'loginController'
+    })
 }]);

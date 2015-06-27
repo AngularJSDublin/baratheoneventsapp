@@ -1,0 +1,7 @@
+.loginButton {
+	margin: 16px 8px !important;
+}
+
+[ng-cloak], .ng-cloak {
+	display: none;
+}

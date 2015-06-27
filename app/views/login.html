@@ -1,0 +1,31 @@
+<md-content id="container" flex class="md-padding">
+	<md-card>
+	    <md-card-content>
+	    	<div class="well">
+			  Login
+			</div>
+
+		    <div ng-controller="loginController">
+			    <form role="form">
+				  <div class="form-group">
+				    <label for="email">Username:</label>
+				    <input type="text" class="form-control" id="email" ng-model="username">
+				  </div>
+				  <div class="form-group">
+				    <label for="pwd">Password:</label>
+				    <input type="password" class="form-control" id="pwd" ng-model="password">
+				  </div>
+				  <button type="submit" class="btn btn-default" ng-click="doLogin(user)">Submit</button>
+				</form>
+				
+				<br/>
+
+				<div ng-show="loginError" ng-cloak class="alert alert-danger" role="alert">
+				  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				  <span class="sr-only">Error:</span>
+				  Incorrect user details
+				</div>
+			</div>
+	    </md-card-content>
+     </md-card>
+</md-content>

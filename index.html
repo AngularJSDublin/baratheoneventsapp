@@ -9,7 +9,6 @@
         <title>Baratheon Events App</title>
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
         <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
         <!-- Optional theme -->
         <link rel="stylesheet" href="assets/css/vendor/bootstrap-theme.min.css">
@@ -27,9 +26,17 @@
              <md-button ng-click="Home.toggleSidenav('left')" hide-gt-sm class="md-icon-button">
                  <md-icon aria-label="Menu" md-svg-icon="assets/material-icons/ic_menu_white_24px.svg"></md-icon>
              </md-button>
-             <h1>Baratheon Events</h1>
+
+             <a ng-href="/#/"><h1>Baratheon Events</h1></a>
          </div>
+
+        <div class="pull-right">
+            <md-button ng-href="/#/login" ng-show="!$root.user" class="loginButton">Login</md-button>
+        </div>
+        
+        <div class="pull-right" ng-cloak ng-show="!!$root.user" class="loginButton">{{$root.user.username}}</div>
      </md-toolbar>
+
 
      <!--'md-sidenav' resized to 250px in 'angular-material.css' but under gitignore-->
      <div layout="row" flex>
@@ -61,14 +68,17 @@
     <!--App files-->
     <script src="app/app.js"></script>
 
-    <!--Controllers-->
+    
     <script src="app/services/index.js"></script>
-    <script src="app/controllers/homeController.js"></script>
-    <script src="app/controllers/eventsController.js"></script>
+
+    <!--Services-->
     <script src="app/services/EventsService.js"></script>
     <script src="app/services/CategoriesService.js"></script>
+    <script src="app/services/LoginService.js"></script>
 
-
-
-    </body>
+    <!--Controllers-->
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/eventsController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+  </body>
 </html>
