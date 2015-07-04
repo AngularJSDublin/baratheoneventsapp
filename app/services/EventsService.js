@@ -27,7 +27,7 @@ angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseA
 	function getEvent(eventId) {
 		myQ = newQ();
 
-		getRef().orderByKey().equalTo(eventId).once("value", function(data) {
+        getRef().child(eventId).once("value", function (data) {
 			myQ.resolve(data.val());
 		});
 
