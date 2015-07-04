@@ -10,9 +10,10 @@
 
             $scope.registerForEvent = function (ev) {
                 $mdDialog.show({
+                    controller: "dialogController",
                     templateUrl: 'app/views/registerModal.html',
                     parent: angular.element(document.body),
-                    targetEvent: ev
+                
                 })
             }
         }

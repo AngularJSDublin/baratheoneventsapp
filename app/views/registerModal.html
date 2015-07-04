@@ -1,8 +1,9 @@
-<md-dialog aria-label="Mango (Fruit)">
+<md-dialog aria-label="Registration form">
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Mango (Fruit)</h2>
+                <h2>Register</h2>
+
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="answer('not applicable')">
                     <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
@@ -10,7 +11,18 @@
             </div>
         </md-toolbar>
         <md-dialog-content>
+        
             <div>
+
+            <form>
+            Name: <input ng-model="registryInfo.name" type="text" placeholder="Full Name" >
+
+            Email: <input ng-model="registryInfo.email" type="email" placeholder="Email" >
+
+            Repeat Email: <input ng-model="registryInfo.email2" type="text" placeholder="Repeat Email" >
+            </form>
+
+            <pre>{{ registryInfo | json }}</pre>
 
             </div>
         </md-dialog-content>
