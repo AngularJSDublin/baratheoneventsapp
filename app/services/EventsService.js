@@ -1,4 +1,6 @@
 angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseArray', '$firebaseObject', function($q, $firebaseArray, $firebaseObject) {
+	var FIREBASE_URL = 'https://baratheoneventsdb.firebaseio.com/events';
+
 	return {
 		getAllEvents : getAllEventsImpl,
 		getEvent: getEvent,
@@ -8,12 +10,16 @@ angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseA
 	};
 
 	function getRef () {
-		return new Firebase('https://baratheoneventsdb.firebaseio.com/events');
+		return new Firebase(FIREBASE_URL);
+	};
+
+	function getEventUsersRef(eventId) {
+		return new Firebase(FIREBASE_URL + '/' + eventId + '/users');
 	};
 
 	function newQ() {
 		return $q.defer();
-	}
+	};
 
 	function getAllEventsImpl() {
 		myQ = newQ();
@@ -34,7 +40,7 @@ angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseA
 
 		return myQ.promise;
 	};
-
+	
 	function addNewEvent(event) {
 		throw new Error("not yet implemented!!!");
 	};
@@ -45,6 +51,13 @@ angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseA
 
 	function registerUser(eventId, name, email) {
 		myQ = newQ();
-		return myQ;
+
+		var usersRef = getEventUsersRef(eventId);
+
+		var newPushRef = usersRef.push({name : name, email : email}, function() {
+			myQ.resolve(newPushRef.key());
+		});
+
+		return myQ.promise;
 	}
 }]);

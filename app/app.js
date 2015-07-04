@@ -28,4 +28,10 @@ angular.module('eventsApp', [
         templateUrl: 'app/views/event-details.html',
         controller: 'eventDetailsController'
     })
+        .state('event-test', {
+            url: '/event-test',
+            templateUrl: 'app/views/eventTest.html',
+            controller: 'eventTestController'
+        }
+    )
 }]);
