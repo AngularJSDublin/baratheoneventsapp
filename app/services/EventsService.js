@@ -51,6 +51,7 @@ angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseA
 
 	function registerUser(eventId, name, email) {
 		myQ = newQ();
+
 		var usersRef = getEventUsersRef(eventId);
 
 		var newPushRef = usersRef.push({name : name, email : email}, function() {
