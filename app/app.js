@@ -22,4 +22,9 @@ angular.module('eventsApp', [
         templateUrl: 'app/views/login.html',
         controller: 'loginController'
     })
+    .state('event-details', {
+        url: '/:eventId',
+        templateUrl: 'app/views/event-details.html',
+        controller: 'eventDetailsController'
+    })
 }]);
