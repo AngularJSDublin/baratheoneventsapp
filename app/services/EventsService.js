@@ -3,7 +3,8 @@ angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseA
 		getAllEvents : getAllEventsImpl,
 		getEvent: getEvent,
 		addNewEvent: addNewEvent,
-		editEvent: editEvent
+		editEvent: editEvent,
+		registerUser: registerUser
 	};
 
 	function getRef () {
@@ -41,4 +42,9 @@ angular.module('eventsApp.services').factory('eventsService', ['$q', '$firebaseA
 	function editEvent(event) {
 		throw new Error("not yet implemented!!!");
 	};
+
+	function registerUser(eventId, name, email) {
+		myQ = newQ();
+		return myQ;
+	}
 }]);
