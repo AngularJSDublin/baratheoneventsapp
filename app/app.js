@@ -9,6 +9,7 @@ angular.module('eventsApp', [
     'eventsApp.services'
 ])
 
+
 .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
 
