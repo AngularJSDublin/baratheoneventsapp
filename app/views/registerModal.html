@@ -5,24 +5,25 @@
                 <h2>Register</h2>
 
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="answer('not applicable')">
+                <md-button class="md-icon-button" ng-click="closeDialog()">
+
+
                     <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
                 </md-button>
             </div>
         </md-toolbar>
         <md-dialog-content>
-        
+
             <div>
 
-            <form>
-            Name: <input ng-model="registryInfo.name" type="text" placeholder="Full Name" >
+                <form>
 
-            Email: <input ng-model="registryInfo.email" type="email" placeholder="Email" >
+                    <input ng-model="name" type="text" placeholder="Full Name" >
 
-            Repeat Email: <input ng-model="registryInfo.email2" type="text" placeholder="Repeat Email" >
-            </form>
+                    Email: <input ng-model="email" type="email" placeholder="Email" >
 
-            <pre>{{ registryInfo | json }}</pre>
+                    Repeat Email: <input ng-model="email2" type="text" placeholder="Repeat Email" >
+                </form>
 
             </div>
         </md-dialog-content>
@@ -31,11 +32,15 @@
                 More on Wikipedia
             </md-button>
             <span flex></span>
-            <md-button ng-click="answer('not useful')" class="md-primary">
-                Not Useful
+
+
+            <md-button ng-click="closeDialog()" class="md-primary">
+                Cancel
             </md-button>
-            <md-button ng-click="answer('useful')" class="md-primary">
-                Useful
+
+            <md-button ng-click="submitRegistration()" class="md-primary">
+                Register
+
             </md-button>
         </div>
     </form>
